@@ -37,8 +37,8 @@ export default function Header({ activePage }) {
             <li><AdmissionFormTrigger className={`text-[14.5px] no-underline transition-colors ${activePage === "admissions" ? "font-semibold text-[#1f3d30]" : "font-medium text-[#5b564c] hover:text-[#211f1a]"}`}>Admissions</AdmissionFormTrigger></li>
           </ul>
         </nav>
-        <div className="flex items-center gap-5">
-          <a href="/#schools" className="hidden lg:block font-semibold text-[14.5px] text-[#1f3d30] no-underline hover:underline">Find a Location</a>
+        <div className="hidden lg:flex items-center gap-5">
+          <a href="/#schools" className="font-semibold text-[14.5px] text-[#1f3d30] no-underline hover:underline">Find a Location</a>
           <AdmissionFormTrigger className="btn-gold">Schedule a Visit</AdmissionFormTrigger>
         </div>
         <MobileNav />

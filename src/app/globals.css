@@ -146,6 +146,54 @@ html {
 }
 .select-wrap select { cursor: pointer; padding-right: 36px; }
 
+/* Mobile nav */
+.mobile-nav-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: opacity 300ms;
+  display: none;
+}
+@media (max-width: 1023px) {
+  .mobile-nav-overlay { display: block; }
+}
+.mobile-nav-overlay.is-closed {
+  opacity: 0;
+  pointer-events: none;
+}
+.mobile-nav-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-nav-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 70;
+  height: 100vh;
+  height: 100dvh;
+  width: 85vw;
+  max-width: 360px;
+  background-color: #ffffff;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transition: transform 300ms ease-out, visibility 300ms ease-out;
+  overflow-y: auto;
+  display: none;
+}
+@media (max-width: 1023px) {
+  .mobile-nav-drawer { display: block; }
+}
+.mobile-nav-drawer.is-closed {
+  transform: translateX(100%);
+  visibility: hidden;
+}
+.mobile-nav-drawer.is-open {
+  transform: translateX(0);
+  visibility: visible;
+}
+
 /* Scroll reveal (IntersectionObserver-driven) */
 .reveal {
   opacity: 0;
