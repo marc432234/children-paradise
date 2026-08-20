@@ -7,8 +7,20 @@ import CTABand from "@/components/CTABand";
 import Experience from "@/components/Experience";
 
 export const metadata = {
-  title: "Student Life | Children's Paradise Learning Academies",
+  title: "Student Life",
   description: "Student life at Children's Paradise goes beyond the classroom. Explore learning, friendships, creative experiences and community moments across our schools.",
+  alternates: { canonical: "/student-life" },
+  openGraph: {
+    title: "Student Life at Children's Paradise Learning Academies",
+    description: "Student life at Children's Paradise goes beyond the classroom. Explore learning, friendships, creative experiences and community moments across our schools.",
+    url: "/student-life",
+    images: [{ url: "/images/sl-outing.png", width: 640, height: 520, alt: "Children's Paradise students on a school outing" }],
+  },
+  twitter: {
+    title: "Student Life at Children's Paradise Learning Academies",
+    description: "Student life at Children's Paradise goes beyond the classroom. Real classrooms, real teachers and real moments.",
+    images: ["/images/sl-outing.png"],
+  },
 };
 
 export default function StudentLifePage() {
@@ -17,7 +29,7 @@ export default function StudentLifePage() {
       <Header activePage="student life" />
 
       {/* Hero */}
-      <section className="bg-[#f7f3ec] relative overflow-hidden py-20 md:py-24 lg:py-[120px] px-6 lg:px-20" aria-label="Student Life hero">
+      <section id="main-content" className="bg-[#f7f3ec] relative overflow-hidden py-20 md:py-24 lg:py-[120px] px-6 lg:px-20" aria-label="Student Life hero">
         <Image src="/images/hero-deco.svg" alt="" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-180 scale-y-[-1] w-[1441px] h-[1025px] pointer-events-none select-none opacity-[0.18]" width={1441} height={1025} aria-hidden="true" />
         <ScrollReveal>
         <div className="max-w-[680px] mx-auto flex flex-col gap-4 items-center text-center relative z-10">

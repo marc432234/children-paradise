@@ -3,8 +3,18 @@ import Header from "@/components/Header";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata = {
-  title: "Contact | Children's Paradise Learning Academies",
+  title: "Contact",
   description: "Get in touch with Children's Paradise. Whether you're exploring programmes, looking for a location or ready to schedule a visit, we're here to help.",
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact Children's Paradise Learning Academies",
+    description: "Get in touch with Children's Paradise. Whether you're exploring programmes, looking for a location or ready to schedule a visit, we're here to help.",
+    url: "/contact",
+  },
+  twitter: {
+    title: "Contact Children's Paradise Learning Academies",
+    description: "Get in touch with Children's Paradise. Looking for a location or ready to schedule a visit, we're here to help.",
+  },
 };
 
 export default function ContactPage() {
@@ -13,7 +23,7 @@ export default function ContactPage() {
       <Header activePage="contact" />
 
       {/* Hero */}
-      <section className="bg-white pt-20 md:pt-24 lg:pt-[80px] px-6 lg:px-20" aria-label="Contact hero">
+      <section id="main-content" className="bg-white pt-20 md:pt-24 lg:pt-[80px] px-6 lg:px-20" aria-label="Contact hero">
         <ScrollReveal>
         <div className="max-w-[680px] mx-auto flex flex-col gap-4 items-center text-center">
           <p className="font-space-grotesk font-bold text-[13px] text-[#b98a2e] tracking-[1.82px] uppercase m-0">CONTACT</p>

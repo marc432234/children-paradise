@@ -7,8 +7,20 @@ import CTABand from "@/components/CTABand";
 import Experience from "@/components/Experience";
 
 export const metadata = {
-  title: "About | Children's Paradise Learning Academies",
+  title: "About Us",
   description: "For more than 25 years, Children's Paradise has helped children learn, grow and thrive across Hialeah and Miami Lakes, Florida.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About Children's Paradise Learning Academies",
+    description: "For more than 25 years, Children's Paradise has helped children learn, grow and thrive across Hialeah and Miami Lakes, Florida.",
+    url: "/about",
+    images: [{ url: "/images/about-story.png", width: 547, height: 575, alt: "Children's Paradise graduation ceremony in Hialeah, FL" }],
+  },
+  twitter: {
+    title: "About Children's Paradise Learning Academies",
+    description: "For more than 25 years, Children's Paradise has helped children learn, grow and thrive across Hialeah and Miami Lakes, Florida.",
+    images: ["/images/about-story.png"],
+  },
 };
 
 function TwoCol({ reversed, label, title, paragraphs, image, imageAlt, children }) {
@@ -41,7 +53,7 @@ export default function AboutPage() {
       <Header activePage="about" />
 
       {/* Hero */}
-      <section className="bg-[#f7f3ec] py-20 md:py-24 lg:py-[120px] px-6 lg:px-20 relative overflow-hidden">
+      <section id="main-content" className="bg-[#f7f3ec] py-20 md:py-24 lg:py-[120px] px-6 lg:px-20 relative overflow-hidden">
         <Image src="/images/hero-deco.svg" alt="" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-180 scale-y-[-1] w-[1441px] h-[1025px] pointer-events-none select-none" width={1441} height={1025} aria-hidden="true" />
         <ScrollReveal>
         <div className="max-w-[800px] mx-auto text-center relative flex flex-col gap-12 items-center">

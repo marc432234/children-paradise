@@ -55,7 +55,7 @@ export default function HomePage() {
       <Header activePage="home" />
 
       {/* ===== HERO ===== */}
-      <section className="bg-[#f7f3ec] relative overflow-hidden">
+      <section id="main-content" className="bg-[#f7f3ec] relative overflow-hidden">
         <Image src="/images/hero-deco.svg" alt="" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-180 scale-y-[-1] w-[1441px] h-[1025px] pointer-events-none select-none opacity-100" width={1441} height={1025} aria-hidden="true" />
         <div className="max-w-[1440px] mx-auto px-6 lg:px-20 py-16 lg:py-20 flex flex-col lg:flex-row items-center gap-12 lg:gap-20 relative">
           <div className="w-full lg:w-[519px] shrink-0 flex flex-col gap-4">
@@ -63,7 +63,7 @@ export default function HomePage() {
             <div className="flex flex-col gap-8">
               <div className="flex flex-col gap-4">
                 <h1 className="font-instrument-serif text-[40px] md:text-[52px] lg:text-[64px] text-[#211f1a] uppercase tracking-[-1.02px] leading-[1.15] m-0 font-normal">
-                  Where every child<br />has <em className="italic text-[#1f3d30]">room to grow.</em>
+                  Where every child<br />has <span className="italic text-[#1f3d30]">room to grow.</span>
                 </h1>
                 <p className="text-[17px] text-[#5b564c] leading-[1.6] m-0">For more than 25 years, Children&apos;s Paradise has helped children learn, grow and thrive in a caring educational environment across Hialeah and Miami Lakes.</p>
               </div>
@@ -79,7 +79,7 @@ export default function HomePage() {
               <span className="font-fraunces font-semibold text-[28px] text-[#1f3d30] leading-[1.4] whitespace-nowrap">25+</span>
               <p className="text-[12px] text-[#5b564c] leading-[1.4] m-0">Years helping Miami-area families raise confident learners</p>
             </div>
-            <Image src="/images/hero-photo-new.png" alt="Children's Paradise students learning together" width={680} height={620} className="w-full h-full object-cover" priority />
+            <Image src="/images/hero-photo-new.png" alt="Children's Paradise students learning together in a classroom in Hialeah, Florida" width={680} height={620} className="w-full h-full object-cover" priority sizes="(min-width: 1024px) 680px, 100vw" />
           </div>
         </div>
       </section>
@@ -91,7 +91,7 @@ export default function HomePage() {
         <ScrollReveal>
         <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           <div className="w-full lg:w-[500px] h-[260px] lg:h-[520px] shrink-0 rounded-[10px] overflow-hidden">
-            <Image src="/images/about-photo-new.png" alt="Children engaged in a classroom activity at Children's Paradise" width={500} height={520} className="w-full h-full object-cover" />
+            <Image src="/images/about-photo-new.png" alt="Children engaged in a classroom activity at Children's Paradise" width={500} height={520} className="w-full h-full object-cover" sizes="(min-width: 1024px) 500px, 100vw" />
           </div>
           <div className="flex-1 flex flex-col gap-10">
             <div className="flex flex-col gap-4">
@@ -130,7 +130,7 @@ export default function HomePage() {
                     <span className="font-bold text-[13px] text-[#e7d3a2]">{p.num}</span>
                   </div>
                   <div className="h-[200px] w-full rounded overflow-hidden">
-                    <Image src={p.image} alt={`${p.title} at Children's Paradise`} width={300} height={200} className="w-full h-full object-cover" />
+                    <Image src={p.image} alt={`${p.title} at Children's Paradise`} width={300} height={200} className="w-full h-full object-cover" sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" />
                   </div>
                 </div>
                 <div className="flex flex-col gap-4">
@@ -139,7 +139,7 @@ export default function HomePage() {
                     <h3 className="font-instrument-serif text-[28px] text-[#211f1a] uppercase leading-[1.2] m-0 font-normal">{p.title}</h3>
                     <p className="text-[15px] text-[#5b564c] leading-[1.4] mt-2 m-0">{p.description}</p>
                   </div>
-                  <a href="#" className="font-medium text-[14px] text-[#242855] no-underline">Explore Program →</a>
+                  <a href="/programs" className="font-medium text-[14px] text-[#242855] no-underline">Explore Program →</a>
                 </div>
               </article>
               </ScrollReveal>
@@ -204,7 +204,7 @@ export default function HomePage() {
                 <p className="text-[17px] text-white/68 leading-[1.55] m-0">A look at real classrooms, real teachers and real moments from Children&apos;s Paradise.</p>
               </div>
             </div>
-            <a href="#" className="btn-outline-gold shrink-0">See Life at Children&apos;s Paradise →</a>
+            <a href="/student-life" className="btn-outline-gold shrink-0">See Life at Children&apos;s Paradise →</a>
           </div>
           </ScrollReveal>
           <div className="flex flex-col gap-6">
@@ -301,8 +301,8 @@ export default function HomePage() {
                   </address>
                 </div>
                 <div className="flex flex-col gap-2 shrink-0 items-end">
-                  <a href="#" className="font-medium text-[13px] text-[#1f3d30] no-underline">Get Directions</a>
-                  <a href="#" className="font-medium text-[13px] text-[#1f3d30] no-underline">Explore</a>
+                  <a href="/schools" className="font-medium text-[13px] text-[#1f3d30] no-underline">Get Directions</a>
+                  <a href="/schools" className="font-medium text-[13px] text-[#1f3d30] no-underline">Explore</a>
                 </div>
               </div>
               </ScrollReveal>
