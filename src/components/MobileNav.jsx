@@ -102,8 +102,9 @@ export default function MobileNav() {
 
       {/* Slide-in Drawer */}
       <div
-        className={`fixed top-0 right-0 z-[70] h-full w-[min(360px,85vw)] bg-[#f7f3ec] shadow-2xl transition-transform duration-300 ease-out lg:hidden ${
-          open ? "translate-x-0" : "translate-x-full"
+        aria-hidden={!open}
+        className={`fixed top-0 right-0 z-[70] h-full w-[min(360px,85vw)] bg-[#f7f3ec] shadow-2xl transition-[transform,visibility] duration-300 ease-out lg:hidden ${
+          open ? "translate-x-0 visible" : "translate-x-full invisible"
         }`}
       >
         <div className="flex items-center justify-between px-6 h-[84px] border-b border-[#211f1a]/10">
