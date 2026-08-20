@@ -2,25 +2,170 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #211f1a;
+  --navy: #242855;
+  --navy-deep: #1a1d3d;
+  --gold-primary: #b98a2e;
+  --gold-light: #efdd95;
+  --gold-gradient-from: #f6ce56;
+  --gold-gradient-via: #ba923a;
+  --gold-gradient-to: #efdd95;
+  --cream: #f7f3ec;
+  --cream-dark: #eee7d8;
+  --text-brown: #5b564c;
+  --text-muted: #948d7e;
+  --card-bg: #fffdf8;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-inter: var(--font-inter);
+  --font-instrument-serif: var(--font-instrument-serif);
+  --font-space-grotesk: var(--font-space-grotesk);
+  --font-fraunces: var(--font-fraunces);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.font-instrument-serif {
+  font-family: var(--font-instrument-serif), Georgia, serif;
+}
+
+.font-space-grotesk {
+  font-family: var(--font-space-grotesk), sans-serif;
+}
+
+.font-fraunces {
+  font-family: var(--font-fraunces), serif;
+}
+
+/* Gold gradient button */
+.btn-gold {
+  background: linear-gradient(to left, var(--gold-gradient-to), var(--gold-gradient-via) 47%, var(--gold-gradient-from));
+  border: 1px solid var(--gold-light);
+  border-radius: 4px;
+  padding: 14px 24px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #000;
+  letter-spacing: 0.15px;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.btn-gold:hover {
+  opacity: 0.9;
+}
+
+.btn-outline-black {
+  border: 1px solid #000;
+  border-radius: 4px;
+  padding: 14px 24px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #000;
+  letter-spacing: 0.15px;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-outline-black:hover {
+  background: rgba(0,0,0,0.04);
+}
+
+.btn-outline-gold {
+  border: 1px solid var(--gold-light);
+  border-radius: 4px;
+  padding: 14px 22px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #fff;
+  letter-spacing: 0.15px;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-outline-gold:hover {
+  background: rgba(239,221,149,0.15);
+}
+
+/* Form styles */
+.form-field {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid rgba(33,31,26,0.14);
+  border-radius: 6px;
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  font-size: 15px;
+  color: #211f1a;
+  background: white;
+  outline: none;
+  transition: border-color 0.15s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.form-field::placeholder { color: #9b9690; }
+.form-field:focus { border-color: #b98a2e; }
+.select-wrap { position: relative; }
+.select-wrap::after {
+  content: '';
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #9b9690;
+  pointer-events: none;
+}
+.select-wrap select { cursor: pointer; padding-right: 36px; }
+
+/* Scroll reveal (IntersectionObserver-driven) */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-reveal-stagger] .reveal:nth-child(2) {
+  transition-delay: 100ms;
+}
+[data-reveal-stagger] .reveal:nth-child(3) {
+  transition-delay: 200ms;
+}
+[data-reveal-stagger] .reveal:nth-child(4) {
+  transition-delay: 300ms;
 }
