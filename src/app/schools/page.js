@@ -6,8 +6,20 @@ import Admissions from "@/components/Admissions";
 import CTABand from "@/components/CTABand";
 
 export const metadata = {
-  title: "Our Schools | Children's Paradise Learning Academies",
+  title: "Our Schools",
   description: "Find your nearest Children's Paradise across 9 locations in Hialeah and Miami Lakes, Florida. Get directions, contact details and explore each campus.",
+  alternates: { canonical: "/schools" },
+  openGraph: {
+    title: "Our Schools — 9 Locations in Hialeah & Miami Lakes, FL",
+    description: "Find your nearest Children's Paradise across 9 locations in Hialeah and Miami Lakes, Florida. Get directions, contact details and explore each campus.",
+    url: "/schools",
+    images: [{ url: "/images/schools-hero.png", width: 828, height: 621, alt: "Children's Paradise Learning Academy campus" }],
+  },
+  twitter: {
+    title: "Our Schools — 9 Locations in Hialeah & Miami Lakes, FL",
+    description: "Find your nearest Children's Paradise across 9 locations in Hialeah and Miami Lakes, Florida.",
+    images: ["/images/schools-hero.png"],
+  },
 };
 
 const schools = [
@@ -38,7 +50,7 @@ export default function SchoolsPage() {
       <Header activePage="schools" />
 
       {/* Hero */}
-      <section className="bg-[#f7f3ec] relative overflow-hidden h-auto min-h-[500px] lg:h-[621px]" aria-label="Our Schools hero">
+      <section id="main-content" className="bg-[#f7f3ec] relative overflow-hidden h-auto min-h-[500px] lg:h-[621px]" aria-label="Our Schools hero">
         <div className="absolute right-0 top-0 w-full lg:w-[828px] h-full lg:h-[620px] pointer-events-none">
           <Image src="/images/schools-hero.png" alt="" fill className="object-cover" priority />
           <div className="absolute inset-0 bg-gradient-to-r from-[#f7f3ec] from-0% via-[#f7f3ec]/85 via-35% to-transparent to-65%" />
@@ -88,7 +100,7 @@ export default function SchoolsPage() {
                 </div>
                 <div className="flex flex-col gap-2 shrink-0 items-end">
                   <a href={`https://maps.google.com/?q=${s.map}`} target="_blank" rel="noopener" className="font-medium text-[13px] text-[#1f3d30] no-underline">Get Directions</a>
-                  <a href="#" className="font-medium text-[13px] text-[#1f3d30] no-underline">Explore Location</a>
+                  <a href="/contact" className="font-medium text-[13px] text-[#1f3d30] no-underline">Enquire</a>
                 </div>
               </div>
               </ScrollReveal>

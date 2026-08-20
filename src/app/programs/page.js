@@ -6,8 +6,20 @@ import Admissions from "@/components/Admissions";
 import CTABand from "@/components/CTABand";
 
 export const metadata = {
-  title: "Programs | Children's Paradise Learning Academies",
+  title: "Programs",
   description: "Explore Children's Paradise programmes from Early Learning through High School. Supporting children across Hialeah and Miami Lakes, Florida.",
+  alternates: { canonical: "/programs" },
+  openGraph: {
+    title: "Educational Programs at Children's Paradise Learning Academies",
+    description: "Explore early learning through high school programmes at Children's Paradise. 9 locations in Hialeah and Miami Lakes, FL.",
+    url: "/programs",
+    images: [{ url: "/images/programs-hero.png", width: 828, height: 621, alt: "Children's Paradise learning programmes" }],
+  },
+  twitter: {
+    title: "Educational Programs at Children's Paradise Learning Academies",
+    description: "Explore early learning through high school programmes at Children's Paradise. 9 locations in Hialeah and Miami Lakes, FL.",
+    images: ["/images/programs-hero.png"],
+  },
 };
 
 const programs = [
@@ -75,7 +87,7 @@ export default function ProgramsPage() {
       <Header activePage="programs" />
 
       {/* Hero */}
-      <section className="bg-[#f7f3ec] relative overflow-hidden h-auto min-h-[500px] lg:h-[621px]" aria-label="Programs hero">
+      <section id="main-content" className="bg-[#f7f3ec] relative overflow-hidden h-auto min-h-[500px] lg:h-[621px]" aria-label="Programs hero">
         <div className="absolute right-0 top-0 w-full lg:w-[828px] h-full lg:h-[620px] pointer-events-none">
           <Image src="/images/programs-hero.png" alt="" fill className="object-cover" priority />
           <div className="absolute inset-0 bg-gradient-to-r from-[#f7f3ec] from-0% via-[#f7f3ec]/80 via-30% to-transparent to-70%" />
@@ -136,10 +148,10 @@ export default function ProgramsPage() {
                 </div>
                 <p className="font-medium text-[17px] text-[#211f1a] m-0">{prog.age}</p>
               </div>
-              <a href="#" className="btn-outline-black self-start">{prog.cta}</a>
+              <a href="/#admissions" className="btn-outline-black self-start">{prog.cta}</a>
             </div>
             <div className="w-full lg:w-[625px] h-[260px] lg:h-[469px] rounded-[9px] overflow-hidden shrink-0">
-              <Image src={prog.image} alt={prog.imageAlt} width={625} height={469} className="w-full h-full object-cover" />
+              <Image src={prog.image} alt={prog.imageAlt} width={625} height={469} className="w-full h-full object-cover" sizes="(min-width: 1024px) 625px, 100vw" />
             </div>
           </div>
           </ScrollReveal>
