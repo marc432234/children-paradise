@@ -94,27 +94,14 @@ export default function MobileNav() {
 
       {/* Overlay */}
       <div
-        className={`fixed inset-0 z-[60] bg-black/40 transition-opacity duration-300 lg:hidden ${
-          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-        }`}
+        className={`mobile-nav-overlay ${open ? "is-open" : "is-closed"}`}
         onClick={() => setOpen(false)}
       />
 
       {/* Slide-in Drawer */}
       <div
         aria-hidden={!open}
-        className="fixed top-0 right-0 lg:hidden"
-        style={{
-          zIndex: 70,
-          height: "100%",
-          width: "85vw",
-          maxWidth: "360px",
-          backgroundColor: "#ffffff",
-          boxShadow: "0 25px 50px -12px rgba(0,0,0,0.25)",
-          transform: open ? "translateX(0)" : "translateX(100%)",
-          visibility: open ? "visible" : "hidden",
-          transition: "transform 300ms ease-out, visibility 300ms ease-out",
-        }}
+        className={`mobile-nav-drawer ${open ? "is-open" : "is-closed"}`}
       >
         <div className="flex items-center justify-between px-6 h-[84px] border-b border-[#211f1a]/10">
           <div className="flex items-center gap-3">
