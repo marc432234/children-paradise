@@ -103,7 +103,7 @@ export default function MobileNav() {
       {/* Slide-in Drawer */}
       <div
         aria-hidden={!open}
-        className={`fixed top-0 right-0 z-[70] h-full w-[85vw] max-w-[360px] bg-[#f7f3ec] shadow-2xl transition-[transform,visibility] duration-300 ease-out lg:hidden ${
+        className={`fixed top-0 right-0 z-[70] h-full w-[85vw] max-w-[360px] bg-white shadow-2xl transition-[transform,visibility] duration-300 ease-out lg:hidden ${
           open ? "translate-x-0 visible" : "translate-x-full invisible"
         }`}
       >
