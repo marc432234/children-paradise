@@ -103,9 +103,18 @@ export default function MobileNav() {
       {/* Slide-in Drawer */}
       <div
         aria-hidden={!open}
-        className={`fixed top-0 right-0 z-[70] h-full w-[85vw] max-w-[360px] bg-white shadow-2xl transition-[transform,visibility] duration-300 ease-out lg:hidden ${
-          open ? "translate-x-0 visible" : "translate-x-full invisible"
-        }`}
+        className="fixed top-0 right-0 lg:hidden"
+        style={{
+          zIndex: 70,
+          height: "100%",
+          width: "85vw",
+          maxWidth: "360px",
+          backgroundColor: "#ffffff",
+          boxShadow: "0 25px 50px -12px rgba(0,0,0,0.25)",
+          transform: open ? "translateX(0)" : "translateX(100%)",
+          visibility: open ? "visible" : "hidden",
+          transition: "transform 300ms ease-out, visibility 300ms ease-out",
+        }}
       >
         <div className="flex items-center justify-between px-6 h-[84px] border-b border-[#211f1a]/10">
           <div className="flex items-center gap-3">
