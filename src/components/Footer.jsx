@@ -1,7 +1,11 @@
 import Image from "next/image";
 import AdmissionFormTrigger from "@/components/AdmissionFormTrigger";
+import { getContactSettings } from "@/lib/settings";
 
-export default function Footer() {
+export default async function Footer() {
+  const settings = await getContactSettings();
+  const phoneClean = settings.phone.replace(/[^0-9+]/g, "");
+
   return (
     <footer id="contact" className="bg-[#242855] pt-16 pb-6 px-6 lg:px-20 relative overflow-hidden">
       <Image src="/images/footer-deco.svg" alt="" className="absolute top-[70%] left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-180 scale-y-[-1] w-[1441px] h-[1025px] pointer-events-none select-none opacity-[0.07]" width={1441} height={1025} aria-hidden="true" />
@@ -36,9 +40,9 @@ export default function Footer() {
           </div>
           <address className="not-italic">
             <p className="font-space-grotesk font-semibold text-[11px] text-white/40 tracking-[0.75px] uppercase m-0 mb-4">Contact</p>
-            <a href="tel:+13058271772" className="block text-[14px] text-white/60 no-underline py-1">(305) 827-1772</a>
-            <a href="mailto:info@childrensparadise.com" className="block text-[14px] text-white/60 no-underline py-1 break-all">info@childrensparadise.com</a>
-            <span className="block text-[14px] text-white/60 py-1">Hialeah & Miami Lakes, FL</span>
+            <a href={`tel:${phoneClean}`} className="block text-[14px] text-white/60 no-underline py-1">{settings.phone}</a>
+            <a href={`mailto:${settings.email}`} className="block text-[14px] text-white/60 no-underline py-1 break-all">{settings.email}</a>
+            <span className="block text-[14px] text-white/60 py-1">{settings.address}</span>
           </address>
         </div>
         <div className="flex flex-col md:flex-row items-center justify-between pt-6 gap-5">
@@ -48,10 +52,10 @@ export default function Footer() {
             <a href="#" className="text-[13px] text-white/50 no-underline">Accessibility</a>
           </div>
           <div className="flex gap-3 items-center">
-            <a href="#" aria-label="Instagram" className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center shrink-0">
+            <a href={settings.instagram} aria-label="Instagram" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center shrink-0 hover:border-white/40 transition-colors">
               <Image src="/images/icon-instagram.svg" alt="" width={16} height={16} />
             </a>
-            <a href="#" aria-label="Facebook" className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center shrink-0">
+            <a href={settings.facebook} aria-label="Facebook" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center shrink-0 hover:border-white/40 transition-colors">
               <Image src="/images/icon-facebook.svg" alt="" width={18} height={18} />
             </a>
           </div>
