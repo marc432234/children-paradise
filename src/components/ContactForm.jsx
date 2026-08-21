@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Swal from "sweetalert2";
 
-const WEBHOOK_URL = "https://hooks.zapier.com/hooks/catch/15991773/4ti7gco/";
+const WEBHOOK_URL = process.env.NEXT_PUBLIC_WEBHOOK_URL;
 
 export default function ContactForm({ formSource = "contact", onSuccess, variant = "page" }) {
   const [form, setForm] = useState({
