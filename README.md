@@ -74,7 +74,7 @@ All SEO is handled via Next.js App Router metadata conventions.
 Create a `.env.local` file in the project root (never committed — already in `.gitignore`):
 
 ```env
-NEXT_PUBLIC_WEBHOOK_URL=https://hooks.zapier.com/hooks/catch/15991773/4ti7gco/
+NEXT_PUBLIC_WEBHOOK_URL=https://hooks.zapier.com/hooks/catch/xxxxxxx/xxxxxxx/
 ```
 
 | Variable | Description |
