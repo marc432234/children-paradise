@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-export const POSTS_PER_PAGE = 3;
+export const POSTS_PER_PAGE = 9;
 
 export default function PaginatedPosts({ posts, page = 1 }) {
   const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);
