@@ -90,12 +90,12 @@ export default function SchoolsPage() {
               return (
               <ScrollReveal key={s.name} className={`h-full ${isLastOdd ? "md:col-span-2" : ""}`}>
               <div className={`bg-[#fffdf8] border border-[#211f1a]/8 rounded-[10px] p-7 h-full flex items-start justify-between gap-4 ${isLastOdd ? "md:w-1/2 mx-auto" : ""}`}>
-                <div className="flex flex-col gap-3 flex-1">
+                <div className="flex flex-col gap-3 flex-1 min-w-0">
                   <h3 className="font-instrument-serif text-[22px] text-[#211f1a] uppercase leading-[1.2] m-0 font-normal">{s.name}</h3>
                   <address className="not-italic flex flex-col gap-1.5">
                     <div className="flex items-start gap-2"><LocationIcon /><span className="text-[14px] text-[#5b564c] leading-[1.5]">{s.address}</span></div>
                     <div className="flex items-center gap-2"><PhoneIcon /><a href={`tel:${s.phone.replace(/[^\d]/g, "")}`} className="text-[14px] text-[#5b564c] no-underline">{s.phone}</a></div>
-                    <div className="flex items-center gap-2"><EmailIcon /><a href={`mailto:${s.email}`} className="text-[14px] text-[#5b564c] no-underline">{s.email}</a></div>
+                    <div className="flex items-start gap-2"><EmailIcon /><a href={`mailto:${s.email}`} className="text-[14px] text-[#5b564c] no-underline break-all">{s.email}</a></div>
                   </address>
                 </div>
                 <div className="flex flex-col gap-2 shrink-0 items-end">
