@@ -18,6 +18,12 @@ export default async function AdminDashboard() {
       count: pages.length,
       description: "Edit page content stored in Supabase.",
     },
+    {
+      href: "/admin/settings",
+      title: "Settings",
+      count: null,
+      description: "Contact info, social media links, and site configuration.",
+    },
   ];
 
   return (
@@ -32,7 +38,7 @@ export default async function AdminDashboard() {
           >
             <div className="flex items-baseline justify-between">
               <h2 className="text-xl">{card.title}</h2>
-              <span className="text-2xl text-[#ba923a]">{card.count}</span>
+              {card.count !== null && <span className="text-2xl text-[#ba923a]">{card.count}</span>}
             </div>
             <p className="mt-2 text-sm text-[#5b564c]">{card.description}</p>
           </Link>

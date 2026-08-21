@@ -126,3 +126,26 @@ export async function listCategories(): Promise<CategoryRow[]> {
   if (error) throw new Error(error.message);
   return (data ?? []) as CategoryRow[];
 }
+
+export type SettingsRow = {
+  key: string;
+  value: unknown;
+  updated_at: string;
+};
+
+export async function getSettings(key: string): Promise<SettingsRow | null> {
+  const { data, error } = await getSupabaseClient()
+    .from("settings")
+    .select("key, value, updated_at")
+    .eq("key", key)
+    .maybeSingle();
+  if (error) throw new Error(error.message);
+  return (data as SettingsRow) ?? null;
+}
+
+export async function saveSettings(key: string, value: unknown): Promise<void> {
+  const { error } = await getSupabaseClient()
+    .from("settings")
+    .upsert({ key, value, updated_at: new Date().toISOString() }, { onConflict: "key" });
+  if (error) throw new Error(error.message);
+}

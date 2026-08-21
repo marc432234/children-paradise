@@ -9,7 +9,7 @@ import {
   isAuthenticated,
   verifyCredentials,
 } from "@/lib/admin-auth";
-import { deletePost, savePage, savePost, uploadFeaturedImage } from "@/lib/admin-data";
+import { deletePost, savePage, savePost, saveSettings, uploadFeaturedImage } from "@/lib/admin-data";
 
 export type LoginState = { error: string | null };
 
@@ -102,4 +102,23 @@ export async function savePageAction(formData: FormData) {
   await savePage(key, content);
   revalidateSite();
   redirect("/admin/pages");
+}
+
+export async function saveSettingsAction(formData: FormData) {
+  await requireAuth();
+
+  const key = formData.get("key")?.toString().trim() ?? "";
+  if (!key) throw new Error("Missing settings key.");
+
+  const value = {
+    phone: formData.get("phone")?.toString().trim() ?? "",
+    email: formData.get("email")?.toString().trim() ?? "",
+    address: formData.get("address")?.toString().trim() ?? "",
+    instagram: formData.get("instagram")?.toString().trim() ?? "",
+    facebook: formData.get("facebook")?.toString().trim() ?? "",
+  };
+
+  await saveSettings(key, value);
+  revalidateSite();
+  redirect("/admin/settings");
 }
