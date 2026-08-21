@@ -1,3 +1,5 @@
+const supabaseUrl = (process.env.NEXT_PUBLIC_SUPABASE_URL ?? "").replace(/\/$/, "");
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   poweredByHeader: false,
@@ -17,6 +19,15 @@ const nextConfig = {
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
           { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
         ],
+      },
+    ];
+  },
+  async rewrites() {
+    if (!supabaseUrl) return [];
+    return [
+      {
+        source: "/uploads/blog/:path*",
+        destination: `${supabaseUrl}/storage/v1/object/public/blog/:path*`,
       },
     ];
   },
