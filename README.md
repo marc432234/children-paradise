@@ -69,9 +69,23 @@ All SEO is handled via Next.js App Router metadata conventions.
 - Security headers: `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy`
 - `X-Powered-By` header disabled
 
+## Environment Variables
+
+Create a `.env.local` file in the project root (never committed — already in `.gitignore`):
+
+```env
+NEXT_PUBLIC_WEBHOOK_URL=https://hooks.zapier.com/hooks/catch/15991773/4ti7gco/
+```
+
+| Variable | Description |
+|---|---|
+| `NEXT_PUBLIC_WEBHOOK_URL` | Zapier webhook endpoint for the contact and admissions forms |
+
+On Vercel, add this under **Project Settings → Environment Variables**.
+
 ## Contact Form
 
-The contact and admissions forms submit to a Zapier webhook (`hooks.zapier.com`). To change the endpoint, update the URL in `src/components/ContactForm.jsx`.
+The contact and admissions forms submit to the Zapier webhook defined in `NEXT_PUBLIC_WEBHOOK_URL`. To change the endpoint, update the value in `.env.local` (and in Vercel's environment variables for production).
 
 ## Deployment
 
@@ -81,5 +95,3 @@ Deploy to Vercel:
 npm i -g vercel
 vercel --prod
 ```
-
-Environment variables are managed via `vercel env`. No `.env` file is required for the base site — the Zapier webhook URL is hardcoded in the contact form component.
