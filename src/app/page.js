@@ -209,19 +209,19 @@ export default function HomePage() {
           </ScrollReveal>
           <div className="flex flex-col gap-6">
             <ScrollReveal>
-            <div className="flex flex-col md:flex-row gap-6 h-auto md:h-[300px]">
-              <div className="flex-1 rounded-lg overflow-hidden">
+            <div className="flex flex-col md:flex-row gap-6 md:h-[300px]">
+              <div className="h-[200px] md:h-auto flex-1 rounded-lg overflow-hidden">
                 <Image src="/images/sl-1.png" alt="Students celebrating" width={600} height={300} className="w-full h-full object-cover" />
               </div>
               <div className="flex-1 flex flex-col md:flex-row gap-6">
-                <div className="w-full md:w-[340px] shrink-0 rounded-lg overflow-hidden">
+                <div className="h-[200px] md:h-auto w-full md:w-[340px] shrink-0 rounded-lg overflow-hidden">
                   <Image src="/images/sl-2.png" alt="Student working on a project" width={340} height={300} className="w-full h-full object-cover" />
                 </div>
                 <div className="flex-1 flex flex-row md:flex-col gap-6">
-                  <div className="flex-1 rounded-lg overflow-hidden">
+                  <div className="h-[120px] md:h-auto flex-1 rounded-lg overflow-hidden">
                     <Image src="/images/sl-3.png" alt="Students on a school trip" width={300} height={138} className="w-full h-full object-cover" />
                   </div>
-                  <div className="flex-1 rounded-lg overflow-hidden">
+                  <div className="h-[120px] md:h-auto flex-1 rounded-lg overflow-hidden">
                     <Image src="/images/sl-4.png" alt="Teacher with students in class" width={300} height={138} className="w-full h-full object-cover" />
                   </div>
                 </div>
@@ -229,11 +229,11 @@ export default function HomePage() {
             </div>
             </ScrollReveal>
             <ScrollReveal>
-            <div className="flex flex-col md:flex-row gap-6 h-auto md:h-[220px]">
-              <div className="flex-1 rounded-lg overflow-hidden">
+            <div className="flex flex-col md:flex-row gap-6 md:h-[220px]">
+              <div className="h-[160px] md:h-auto flex-1 rounded-lg overflow-hidden">
                 <Image src="/images/sl-5.png" alt="Christmas group photo" width={600} height={220} className="w-full h-full object-cover" />
               </div>
-              <div className="flex-1 rounded-lg overflow-hidden">
+              <div className="h-[160px] md:h-auto flex-1 rounded-lg overflow-hidden">
                 <Image src="/images/sl-6.png" alt="School performance" width={600} height={220} className="w-full h-full object-cover" />
               </div>
             </div>

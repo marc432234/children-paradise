@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import AdmissionFormTrigger from "@/components/AdmissionFormTrigger";
 
@@ -69,6 +70,9 @@ const navLinks = [
 
 export default function MobileNav() {
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => { setMounted(true); }, []);
 
   useEffect(() => {
     if (open) {
@@ -92,17 +96,19 @@ export default function MobileNav() {
         {open ? <CloseIcon /> : <HamburgerIcon />}
       </button>
 
-      {/* Overlay */}
-      <div
-        className={`mobile-nav-overlay ${open ? "is-open" : "is-closed"}`}
-        onClick={() => setOpen(false)}
-      />
+      {mounted && createPortal(
+        <>
+          {/* Overlay — rendered at body level so it covers everything including the header */}
+          <div
+            className={`mobile-nav-overlay ${open ? "is-open" : "is-closed"}`}
+            onClick={() => setOpen(false)}
+          />
 
-      {/* Slide-in Drawer */}
-      <div
-        aria-hidden={!open}
-        className={`mobile-nav-drawer ${open ? "is-open" : "is-closed"}`}
-      >
+          {/* Slide-in Drawer */}
+          <div
+            aria-hidden={!open}
+            className={`mobile-nav-drawer ${open ? "is-open" : "is-closed"}`}
+          >
         <div className="flex items-center justify-between px-6 h-[84px] border-b border-[#211f1a]/10">
           <div className="flex items-center gap-3">
             <Image
@@ -165,7 +171,10 @@ export default function MobileNav() {
             <span>(305) 557-3644</span>
           </div>
         </div>
-      </div>
+          </div>
+        </>,
+        document.body
+      )}
     </>
   );
 }

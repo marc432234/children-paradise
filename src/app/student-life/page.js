@@ -84,19 +84,19 @@ export default function StudentLifePage() {
           <div className="flex flex-col gap-6">
             {/* Row 1: 3 images */}
             <ScrollReveal>
-            <div className="flex flex-col md:flex-row gap-6 h-auto md:h-[300px]">
-              <div className="flex-1 rounded-[8px] overflow-hidden">
+            <div className="flex flex-col md:flex-row gap-6 md:h-[300px]">
+              <div className="h-[200px] md:h-auto flex-1 rounded-[8px] overflow-hidden">
                 <Image src="/images/sl-1.png" alt="Students celebrating at Children's Paradise" width={600} height={300} className="w-full h-full object-cover" />
               </div>
               <div className="flex-1 flex flex-col md:flex-row gap-6">
-                <div className="w-full md:w-[340px] shrink-0 rounded-[8px] overflow-hidden">
+                <div className="h-[200px] md:h-auto w-full md:w-[340px] shrink-0 rounded-[8px] overflow-hidden">
                   <Image src="/images/sl-2.png" alt="Student working on a project" width={340} height={300} className="w-full h-full object-cover" />
                 </div>
                 <div className="flex-1 flex flex-row md:flex-col gap-6">
-                  <div className="flex-1 rounded-[8px] overflow-hidden">
+                  <div className="h-[120px] md:h-auto flex-1 rounded-[8px] overflow-hidden">
                     <Image src="/images/sl-teacher.png" alt="Teacher with students in class" width={300} height={150} className="w-full h-full object-cover" />
                   </div>
-                  <div className="flex-1 rounded-[8px] overflow-hidden">
+                  <div className="h-[120px] md:h-auto flex-1 rounded-[8px] overflow-hidden">
                     <Image src="/images/sl-outing.png" alt="Students on a school outing" width={300} height={150} className="w-full h-full object-cover" />
                   </div>
                 </div>
@@ -106,11 +106,11 @@ export default function StudentLifePage() {
 
             {/* Row 2: 2 images */}
             <ScrollReveal>
-            <div className="flex flex-col md:flex-row gap-6 h-auto md:h-[220px]">
-              <div className="flex-1 rounded-[8px] overflow-hidden">
+            <div className="flex flex-col md:flex-row gap-6 md:h-[220px]">
+              <div className="h-[160px] md:h-auto flex-1 rounded-[8px] overflow-hidden">
                 <Image src="/images/sl-christmas.png" alt="Children's Paradise Christmas group photo" width={600} height={220} className="w-full h-full object-cover" />
               </div>
-              <div className="flex-1 rounded-[8px] overflow-hidden">
+              <div className="h-[160px] md:h-auto flex-1 rounded-[8px] overflow-hidden">
                 <Image src="/images/sl-6.png" alt="School performance at Children's Paradise" width={600} height={220} className="w-full h-full object-cover" />
               </div>
             </div>
